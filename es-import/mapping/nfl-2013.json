@@ -1,0 +1,86 @@
+{
+  "mappings": {
+    "properties": {
+      "def": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "defscore": {
+        "type": "short"
+      },
+      "description": {
+        "type": "text",
+        "fielddata": true
+      },
+      "down": {
+        "type": "short",
+        "ignore_malformed": true
+      },
+      "gameid": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "min": {
+        "type": "short",
+        "ignore_malformed": true
+      },
+      "nextscore": {
+        "type": "short"
+      },
+      "off": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "offscore": {
+        "type": "short"
+      },
+      "qtr": {
+        "type": "short"
+      },
+      "scorechange": {
+        "type": "short"
+      },
+      "scorediff": {
+        "type": "short"
+      },
+      "season": {
+        "type": "date",
+        "format": "YYYY",
+        "ignore_malformed": true
+      },
+      "sec": {
+        "type": "short",
+        "ignore_malformed": true
+      },
+      "series1stdn": {
+        "type": "short"
+      },
+      "teamwin": {
+        "type": "short"
+      },
+      "togo": {
+        "type": "short",
+        "ignore_malformed": true
+      },
+      "ydline": {
+        "type": "short",
+        "ignore_malformed": true
+      }
+    }
+  }
+}

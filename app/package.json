@@ -1,0 +1,21 @@
+{
+  "name": "nfl-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.0.0",
+    "cookie-parser": "~1.4.6",
+    "debug": "~4.3.3",
+    "express": "~4.17.3",
+    "http-errors": "~2.0.0",
+    "morgan": "~1.10.0",
+    "pug": "~3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

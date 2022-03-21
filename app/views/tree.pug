@@ -1,0 +1,12 @@
+extends layout
+
+block head
+  script(src='https://d3js.org/d3.v6.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+block content
+  .container.section.center
+    #tree-chart
+  script(src='javascripts/tree.js')

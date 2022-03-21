@@ -1,0 +1,43 @@
+body {
+  font: 14px sans-serif;
+}
+
+.container {
+  font: 18px sans-serif;
+}
+
+.row {
+  margin-top:20px;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+a {
+  color: rgb(87, 5, 238);
+}
+
+ul li {
+  padding-left:1em;
+  margin-bottom:10px;
+}
+
+.arc path {
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}

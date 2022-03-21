@@ -1,0 +1,9 @@
+{
+  "name": "es-import",
+  "license": "The Unlicense",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.0.0",
+    "array.prototype.flatmap": "^1.2.5",
+    "get-json": "^1.0.1"    
+  }
+}

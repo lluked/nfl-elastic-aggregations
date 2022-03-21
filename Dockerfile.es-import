@@ -1,0 +1,12 @@
+FROM node
+
+#  Keep node dependencies seperate so app can be mounted without overwriting them when overiding command for development.
+WORKDIR /dependencies
+COPY package*.json /
+RUN npm install
+ENV NODE_PATH=/dependencies/node_modules
+
+# Set WORKDIR to /es-import
+WORKDIR /es-import
+
+CMD [ "node", "javascripts/_nfl.js" ]

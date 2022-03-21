@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    block head
+      title= title
+  nav
+    .nav-wrapper.cyan.darken-4
+      a.brand-logo.center(href='/') D3 Elasticsearch NFL Aggregations
+      ul.left.center-vertical.hide-on-med-and-down
+        li
+          a(href='/') About
+        li
+          a(href='/donut') Donut
+        li
+          a(href='/tree') Tree
+  body
+    body(class='cyan darken-1')  
+    header.cyan.darken-3.section
+      p.flow-text.grey-text.center.text-lighten-3 #{title}
+    block content

@@ -1,0 +1,33 @@
+extends layout
+
+block head
+  script(src='https://d3js.org/d3.v6.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+block content
+
+  .container#about
+    .row
+      .col.s12
+        p
+          | Sample D3 Visualisations based on aggregations from elasticsearch, this project was originally based on 
+          | #[a(href='https://github.com/stormpython/nfl-elastic-aggregations') nfl-elastic-aggregations] but has been completely overhauled, 
+          | after the changes mainly the data and concept remain.
+
+  .container#changes
+    .row
+      .col.s3
+        p 
+          | Changes:
+      .col.s11.offset-s1
+        ul
+        li Data mapping has been updated to support elasticsearch 8.
+        li A simple node app has been made with express framework and pug templating in order to carry out logic.
+        li Search queries have been updated to support new mapping.
+        li The elasticsearch node module is now used instead of the elasticsearch.js client.
+        li Data for visualisations is returned via a router. This can be accessed at `/data/donut` or `/data/tree`.
+        li Visualisations have been completely rewritten for D3 v6 as originally they were created for D3 v3.
+        li This project has been setup with docker and docker-compose for easy deployment.
+        li A separate app has been created to ingest data automatically when bringing the compose stack up.
