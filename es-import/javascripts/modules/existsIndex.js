@@ -1,11 +1,11 @@
-async function existsIndex (client,indexName) {
-  try{
+async function existsIndex (client, indexName) {
+  console.log("existsIndex called...");
+  try {
     let response = await client.indices.exists({
       index: indexName
     });
-    if (response="true") {
-      console.log("Index exists!");
-    };
+    console.log(response);
+    return (response);
   } catch(e) {
     console.log(e);
   };

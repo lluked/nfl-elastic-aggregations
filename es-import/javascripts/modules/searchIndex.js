@@ -1,4 +1,5 @@
-async function searchIndex (client,indexName,searchBody) {
+async function searchIndex (client, indexName, searchBody) {
+  console.log("searchIndex called...");
   try{
     let response = await client.search({
       index: indexName,

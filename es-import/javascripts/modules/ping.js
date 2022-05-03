@@ -1,11 +1,12 @@
 async function ping (client) {
-  try{
+  console.log("ping called...");
+  try {
     let response = await client.ping();
-      if (response="true") {      
-      console.log("Connection made to Elasticsearch!");
-    };
+    console.log(response);
+    return (response);
   } catch(e) {
     console.log(e);
+    return (false);
   };
 };
 
