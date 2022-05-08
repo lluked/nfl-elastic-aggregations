@@ -2,19 +2,15 @@
 
 require('array.prototype.flatmap').shim();
 
-var client = require('./modules/client.js');
-var ping = require('./modules/ping.js');
-var existsIndex = require('./modules/existsIndex.js');
-var deleteIndex = require('./modules/deleteIndex.js');
-var createIndex = require('./modules/createIndex.js');
-var bulkUpload = require('./modules/bulkUpload.js');
+const client = require('./modules/client.js');
 
-const indexName = 'nfl'
-const indexMapping = require('../mapping/nfl-2013.json');
-const dataset = require('../data/nfl-2013.json');
-const bodyData = dataset.flatMap(doc => [{ index: { _index: indexName } }, doc]);
+const ping = require('./modules/ping.js');
+const existsIndex = require('./modules/existsIndex.js');
+const deleteIndex = require('./modules/deleteIndex.js');
+const createIndex = require('./modules/createIndex.js');
+const bulkUpload = require('./modules/bulkUpload.js');
 
-async function setup() {
+async function setup(client, indexName, indexMapping, bodyData) {
     // Test connection to Elasticsearch
     if (await ping(client)) {
         console.log("Ping Successful");
@@ -54,4 +50,9 @@ async function setup() {
     };
 }
 
-setup();
+const nflIndexName = 'nfl'
+const nflIndexMapping = require('../mapping/nfl-2013.json');
+const nflDataset = require('../data/nfl-2013.json');
+const nflBodyData = nflDataset.flatMap(doc => [{ index: { _index: nflIndexName } }, doc]);
+
+setup(client, nflIndexName, nflIndexMapping, nflBodyData);
