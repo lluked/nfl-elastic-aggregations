@@ -88,19 +88,19 @@ services:
     volumes:
       - ./es-import:/es-import
 
-  # app:
-  #   depends_on:
-  #     kibana:
-  #       condition: service_healthy
-  #   build:
-  #     context: ./app
-  #     dockerfile: ../Dockerfile.app
-  #     target: dev
-  #   user: node
-  #   volumes:
-  #     - ./app:/app
-  #   ports:
-  #     - ${WEB_PORT}:3000
+  app:
+    depends_on:
+      kibana:
+        condition: service_healthy
+    build:
+      context: ./app
+      dockerfile: ../Dockerfile.app
+      target: dev
+    user: node
+    volumes:
+      - ./app:/app
+    ports:
+      - ${WEB_PORT}:3000
 
 volumes:
   esdata01:
