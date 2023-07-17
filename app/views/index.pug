@@ -1,8 +1,6 @@
 extends layout
 
 block head
-  script(src='https://d3js.org/d3.v6.min.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
   link(rel='stylesheet', href='/stylesheets/style.css')
 
@@ -12,14 +10,14 @@ block content
     .row
       .col.s12
         p
-          | Sample D3 Visualisations based on aggregations from elasticsearch, this project was originally based on 
-          | #[a(href='https://github.com/stormpython/nfl-elastic-aggregations') nfl-elastic-aggregations] but has been completely overhauled, 
+          | Sample D3 Visualisations based on aggregations from elasticsearch, this project was originally based on
+          | #[a(href='https://github.com/stormpython/nfl-elastic-aggregations') nfl-elastic-aggregations] but has been completely overhauled,
           | after the changes mainly the data and concept remain.
 
   .container#changes
     .row
       .col.s3
-        p 
+        p
           | Changes:
       .col.s11.offset-s1
         ul

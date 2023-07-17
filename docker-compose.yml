@@ -1,7 +1,7 @@
 version: "2.2"
 
 services:
-  setup:
+  elastic-setup:
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     user: "0"
     command: >
@@ -15,7 +15,7 @@ services:
 
   es01:
     depends_on:
-      - setup
+      - elastic-setup
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
     volumes:
       - esdata01:/usr/share/elasticsearch/data
@@ -85,22 +85,22 @@ services:
       context: ./es-import
       dockerfile: ../Dockerfile.es-import
     user: node
-    volumes: 
+    volumes:
       - ./es-import:/es-import
 
-  app:
-    depends_on:
-      kibana:
-        condition: service_healthy  
-    build:
-      context: ./app
-      dockerfile: ../Dockerfile.app
-      target: dev
-    user: node
-    volumes: 
-      - ./app:/app
-    ports:
-      - ${WEB_PORT}:3000
+  # app:
+  #   depends_on:
+  #     kibana:
+  #       condition: service_healthy
+  #   build:
+  #     context: ./app
+  #     dockerfile: ../Dockerfile.app
+  #     target: dev
+  #   user: node
+  #   volumes:
+  #     - ./app:/app
+  #   ports:
+  #     - ${WEB_PORT}:3000
 
 volumes:
   esdata01:

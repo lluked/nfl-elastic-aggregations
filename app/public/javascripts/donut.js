@@ -1,5 +1,5 @@
 // Dimensions
-const donutDims = {width: 1400, height: 600};
+const donutDims = {width: 750, height: 500};
 const donutCent = {x: (donutDims.width/2 + 5), y: (donutDims.height/1.6 + 5)};
 const donutRadius = Math.min(donutDims.width, donutDims.height) / 2;
 
@@ -32,7 +32,7 @@ const polylinesGroup = donutGraph.append('g')
 // Legend group
 const legendGroup = donutSVG.append('g')
   .attr("class", "legend")
-  .attr('transform', `translate(${donutDims.width-150}, 100)`);
+  .attr('transform', `translate(${donutDims.width+50}, 100)`);
 
 // Pie function
 var pie = d3.pie()
@@ -83,7 +83,7 @@ const donutUpdate = (data => {
       .attr('fill', d => donutColour(d.data.key))
       .each(function(d){ this._current = d})
       .transition().duration(750)
-        .attrTween('d', arcEnterTween);
+      .attrTween('d', arcEnterTween);
 
   // Initiate label
   const label = donutGraph.selectAll(".labels").selectAll("path.label")
